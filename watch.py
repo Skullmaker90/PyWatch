@@ -9,9 +9,10 @@ def nullfunc(*args, **kwargs):
 
 def auth(func):
     def wrapper(*args, **kwargs):
-        if not args[0].user:
+        if args[0].user:
+            return func(*args, **kwargs)
+        else:
             print("User isn't authenticated, please set user.")
-        return func(*args, **kwargs)
     return wrapper
 
 
