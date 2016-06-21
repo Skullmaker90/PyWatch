@@ -2,11 +2,6 @@ import requests
 
 url = 'https://api.lootbox.eu'
 
-
-def nullfunc(*args, **kwargs):
-    pass
-
-
 def auth(func):
     def wrapper(*args, **kwargs):
         if args[0].user:
